@@ -4,13 +4,14 @@ public class SpiderTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		String url, palavraChave;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Digite a Url que você quer buscar:");
-		url = 
 		Spider spider = new Spider();
-        spider.search("http://www.bytegod.com.br/", "bytegod");
+		String url, word;
+		System.out.println("Digite a url completa, algo como http://www.exemple.com");
+		url = scan.next();
+		System.out.println("Digite a palavra que você quer buscar");
+		word = scan.next();
+        spider.search(url, word);
 	}
 
 }

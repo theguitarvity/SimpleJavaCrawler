@@ -20,9 +20,9 @@ public class SpiderLeg {
 			Document htmlDocument = connection.get();
 			this.htmlDocument = htmlDocument;
 			if(connection.response().statusCode()==200)
-				System.out.println("\n**Visiting** Received web page at " + url);
+				System.out.println("\n**Visitando** Recebendo web page via " + url);
 			if(!connection.response().contentType().contains("text/html")){
-				System.out.println("**Failure** Retrieved something other than HTML");
+				System.out.println("**Falha** Recebido algum outro documento que nao é html");
                 return false;
 			}
 			Elements linksOnPage = htmlDocument.select("a[href]");
@@ -41,10 +41,10 @@ public class SpiderLeg {
 	}
 	public boolean searchForWord(String searchWord){
 		if(this.htmlDocument == null){
-			System.out.println("ERROR! Call crawl() before performing analysis on the document");
+			System.out.println("ERROR! chamada crawl() antes da analise de desempenho do documento");
             return false;
 		}
-		System.out.println("Searching for the word " + searchWord + "...");
+		System.out.println("Buscando pela palavra chave " + searchWord + "...");
         String bodyText = this.htmlDocument.body().text();
         return bodyText.toLowerCase().contains(searchWord.toLowerCase());
 	}

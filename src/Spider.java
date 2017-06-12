@@ -30,13 +30,13 @@ public class Spider {
 			leg.crawl(currentUrl);
 			boolean sucess = leg.searchForWord(searchWord);
 			if(sucess){
-				System.out.println(String.format("**Sucess** Word %s found at %s",searchWord,currentUrl));
+				System.out.println(String.format("**Sucesso** Palavra chave  %s encontrada em %s",searchWord,currentUrl));
 				break;
 			}
 			this.pagesToVisit.addAll(leg.getLists());
 			
 				
 		}
-		System.out.println(String.format("**Done** Visited %s web page(s)", this.pagesVisited.size()));
+		System.out.println(String.format("**Feito** Visitado %s web page(s)", this.pagesVisited.size()));
 	}
 }
